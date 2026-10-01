@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub | 学習開始</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>StudyHub</h1>
+        <p>学習開始</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>学習を始める</h2>
+            <p>これから勉強する内容を入力してください。</p>
+
+            <form class="study-form" method="POST">
+
+                <!-- 学習科目 -->
+                <div class="form-group">
+                    <label for="subject">学習科目</label>
+
+                    <select id="subject" name="subject">
+                        <option value="">選択してください</option>
+                        <option value="ap">応用情報</option>
+                        <option value="aws">AWS</option>
+                        <option value="toeic">TOEIC</option>
+                    </select>
+                </div>
+
+                <!-- 学習分野 -->
+                <div class="form-group">
+                    <label for="topic">学習分野</label>
+
+                    <input
+                        type="text"
+                        id="topic"
+                        name="topic"
+                        placeholder="例：データベース"
+                    >
+                </div>
+
+                <!-- 今日やる内容 -->
+                <div class="form-group">
+                    <label for="content">今日やる内容</label>
+
+                    <input
+                        type="text"
+                        id="content"
+                        name="content"
+                        placeholder="例：午後問題を1問解く"
+                    >
+                </div>
+
+                <!-- 目標時間 -->
+                <div class="form-group">
+                    <label for="minutes">目標時間</label>
+
+                    <div class="time-input">
+                        <input
+                            type="number"
+                            id="minutes"
+                            name="minutes"
+                            min="1"
+                            placeholder="60"
+                        >
+                        <span>分</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="study-start-button">
+                    学習開始
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

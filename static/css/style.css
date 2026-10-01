@@ -156,8 +156,14 @@ button:hover {
 }
 
 /* 続きからボタン */
-.continue-button {
-    background-color: #eeeeee;
+.start-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #333333;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* 学習開始ボタン */
@@ -176,4 +182,47 @@ button:hover {
 
 .start-button:hover {
     opacity: 0.8;
+}
+
+/* 学習開始フォーム */
+.study-form {
+    max-width: 600px;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.time-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-input input {
+    width: 150px;
+}
+
+.study-start-button {
+    background-color: #333333;
+    color: white;
+    padding: 15px 40px;
+    font-weight: bold;
 }
