@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}StudyHub{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+
+            <div>
+                <h1>StudyHub</h1>
+                <p>{% block page_name %}{% endblock %}</p>
+            </div>
+
+            <nav>
+                <a href="{{ url_for('home') }}">ダッシュボード</a>
+                <a href="{{ url_for('study') }}">学習を始める</a>
+                <a href="{{ url_for('history') }}">学習履歴</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

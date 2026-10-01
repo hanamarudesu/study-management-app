@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}StudyHub | 学習履歴{% endblock %}
 
-    <title>StudyHub | 学習記録</title>
+{% block page_name %}学習履歴{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-
-<body>
-
-    <header>
-        <h1>StudyHub</h1>
-        <p>学習記録</p>
-    </header>
-
-    <main>
-
+{% block content %}
     <section>
         <h2>おつかれさまでした！</h2>
 
@@ -96,8 +82,4 @@
         </form>
     </section>
 
-    </main>
-
-</body>
-
-</html>
+{% endblock %}

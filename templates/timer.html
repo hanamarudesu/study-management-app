@@ -1,47 +1,32 @@
-<!DOCTYPE html>
-<html lang="ja">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}StudyHub | 学習中{% endblock %}
 
-    <title>StudyHub | 学習中</title>
+{% block page_name %}学習中{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block content %}
+
+<section>
+    <h2>学習中</h2>
+
+    <p>科目：{{ subject }}</p>
+    <p>分野：{{ topic }}</p>
+    <p>学習内容：{{ content }}</p>
+
+    <div class="timer" id="timer">
+        {{ minutes }}:00
+    </div>
+
+    <div class="timer-buttons">
+        <button id="pause-button">一時停止</button>
+        <button id="finish-button">学習終了</button>
+    </div>
+</section>
+
+{% endblock %}
 
 
-<body>
-
-    <header>
-        <h1>StudyHub</h1>
-        <p>学習中</p>
-    </header>
-
-    <main>
-
-        <section class="timer-section">
-
-            <h2>学習中</h2>
-
-            <div class="study-info">
-                <p><strong>学習科目：</strong>{{ subject }}</p>
-                <p><strong>学習分野：</strong>{{ topic }}</p>
-                <p><strong>学習内容：</strong>{{ content }}</p>
-            </div>
-
-            <div class="timer" id="timer">
-                {{ minutes }}:00
-            </div>
-
-            <div class="timer-buttons">
-                <button id="pause-button">一時停止</button>
-                <button id="finish-button">学習終了</button>
-            </div>
-
-        </section>
-
-    </main>
+{% block scripts %}
 
 <script>
     const targetMinutes = Number("{{ minutes }}");
@@ -51,6 +36,7 @@
     const timerElement = document.getElementById("timer");
     const pauseButton = document.getElementById("pause-button");
     const finishButton = document.getElementById("finish-button");
+
     // 一時停止中かどうか
     let isPaused = false;
 
@@ -65,18 +51,15 @@
     }
 
     function countdown() {
-
         if (!isPaused && remainingSeconds > 0) {
             remainingSeconds--;
             elapsedSeconds++;
-            console.log("学習時間:", elapsedSeconds);
 
             updateTimer();
         }
     }
 
     pauseButton.addEventListener("click", function () {
-
         // true と false を切り替える
         isPaused = !isPaused;
 
@@ -87,22 +70,21 @@
         }
     });
 
-    updateTimer();
-
+    // 学習終了ボタン
     finishButton.addEventListener("click", function () {
-    const params = new URLSearchParams({
-        subject: "{{ subject }}",
-        topic: "{{ topic }}",
-        content: "{{ content }}",
-        elapsed: elapsedSeconds
+        const params = new URLSearchParams({
+            subject: "{{ subject }}",
+            topic: "{{ topic }}",
+            content: "{{ content }}",
+            elapsed: elapsedSeconds
+        });
+
+        window.location.href = "/record?" + params.toString();
     });
 
-    window.location.href = "/record?" + params.toString();
-    });
+    updateTimer();
 
     setInterval(countdown, 1000);
 </script>
 
-</body>
-
-</html>
+{% endblock %}
