@@ -3,12 +3,123 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>StudyHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>StudyHub | ダッシュボード</title>
 </head>
 
 <body>
-    <h1>StudyHub</h1>
-    <p>学習管理アプリへようこそ！</p>
+
+    <header>
+        <h1>StudyHub</h1>
+        <p>ダッシュボード</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>おかえりなさい！</h2>
+            <p>今日も少しずつ進めましょう。</p>
+        </section>
+
+        <section>
+            <h2>今日の学習</h2>
+
+            <div class="study-summary">
+
+                <div class="summary-card">
+                    <h3>今日の学習時間</h3>
+                    <p>0時間00分</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>目標学習時間</h3>
+                    <p>2時間</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>今日やること</h2>
+
+            <div class="task-list">
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>応用情報：データベース P.136〜</span>
+                </div>
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>AWS：IAM</span>
+                </div>
+
+                <div class="task-item">
+                    <input type="checkbox">
+                    <span>TOEIC：Part 5</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>学習状況</h2>
+
+            <div class="progress-item">
+                <div class="progress-info">
+                    <span>応用情報</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-info">
+                    <span>AWS</span>
+                    <span>40%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 40%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-info">
+                    <span>TOEIC</span>
+                    <span>20%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 20%;"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>前回の続き</h2>
+
+            <div class="next-study">
+                <div>
+                    <h3>応用情報</h3>
+                    <p>データベース P.136から</p>
+                </div>
+
+                <button class="continue-button">続きから</button>
+            </div>
+        </section>
+
+        <div class="start-area">
+            <button class="start-button">学習を始める</button>
+        </div>
+
+    </main>
+
 </body>
 
 </html>

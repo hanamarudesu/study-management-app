@@ -1,0 +1,179 @@
+/* ページ全体 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* 上部のヘッダー */
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #dddddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #777777;
+}
+
+/* メイン部分 */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* 各項目をカードっぽくする */
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+/* 今日やること */
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* 学習開始ボタン */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* 今日の学習サマリー */
+.study-summary {
+    display: flex;
+    gap: 20px;
+}
+
+/* 学習時間・目標時間のカード */
+.summary-card {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.summary-card p {
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 今日やること */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.task-item input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* 学習状況 */
+.progress-item {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 100%;
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+/* 前回の続き */
+.next-study {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.next-study h3 {
+    margin: 0 0 5px;
+}
+
+.next-study p {
+    margin: 0;
+}
+
+/* 続きからボタン */
+.continue-button {
+    background-color: #eeeeee;
+}
+
+/* 学習開始ボタン */
+.start-area {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.start-button {
+    padding: 15px 40px;
+    background-color: #333333;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.start-button:hover {
+    opacity: 0.8;
+}
