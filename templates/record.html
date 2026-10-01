@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub | 学習記録</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>StudyHub</h1>
+        <p>学習記録</p>
+    </header>
+
+    <main>
+
+    <section>
+        <h2>おつかれさまでした！</h2>
+
+        <div class="record-summary">
+            <p><strong>学習科目：</strong>{{ subject }}</p>
+            <p><strong>学習分野：</strong>{{ topic }}</p>
+            <p><strong>学習内容：</strong>{{ content }}</p>
+            <p><strong>学習時間：</strong>{{ elapsed }} 秒</p>
+        </div>
+
+        <form class="study-form" method="POST" action="{{ url_for('save_record') }}">
+
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <input type="hidden" name="topic" value="{{ topic }}">
+            <input type="hidden" name="content" value="{{ content }}">
+            <input type="hidden" name="elapsed" value="{{ elapsed }}">
+
+            <div class="form-group">
+                <label for="material">教材</label>
+                <input
+                    type="text"
+                    id="material"
+                    name="material"
+                    placeholder="例：応用情報技術者 合格教本"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="start-position">開始ページ・問題番号</label>
+                <input
+                    type="text"
+                    id="start-position"
+                    name="start_position"
+                    placeholder="例：136"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="end-position">終了ページ・問題番号</label>
+                <input
+                    type="text"
+                    id="end-position"
+                    name="end_position"
+                    placeholder="例：150"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="understanding">理解度</label>
+
+                <select id="understanding" name="understanding">
+                    <option value="">選択してください</option>
+                    <option value="1">1 - ほぼ分からない</option>
+                    <option value="2">2 - 少し分かる</option>
+                    <option value="3">3 - 普通</option>
+                    <option value="4">4 - だいたい分かる</option>
+                    <option value="5">5 - ほぼ完璧</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="next-plan">次回やること</label>
+                <input
+                    type="text"
+                    id="next-plan"
+                    name="next_plan"
+                    placeholder="例：P.151から続きをする"
+                >
+            </div>
+
+            <button type="submit" class="study-start-button">
+                記録する
+            </button>
+
+        </form>
+    </section>
+
+    </main>
+
+</body>
+
+</html>

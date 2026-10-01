@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub | 学習履歴</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>StudyHub</h1>
+        <p>学習履歴</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>学習履歴</h2>
+
+            {% for record in records %}
+
+            <div class="history-card">
+
+                <h3>
+                    {{ record["subject"] }}
+                    /
+                    {{ record["topic"] }}
+                </h3>
+
+                <p>
+                    <strong>学習内容：</strong>
+                    {{ record["content"] }}
+                </p>
+
+                <p>
+                    <strong>学習時間：</strong>
+                    {{ record["duration_seconds"] }} 秒
+                </p>
+
+                <p>
+                    <strong>教材：</strong>
+                    {{ record["material"] }}
+                </p>
+
+                <p>
+                    <strong>範囲：</strong>
+                    {{ record["start_position"] }}
+                    ～
+                    {{ record["end_position"] }}
+                </p>
+
+                <p>
+                    <strong>理解度：</strong>
+                    {{ record["understanding_level"] }} / 5
+                </p>
+
+                <p>
+                    <strong>次回やること：</strong>
+                    {{ record["next_plan"] }}
+                </p>
+
+                <p class="record-date">
+                    {{ record["created_at"] }}
+                </p>
+
+            </div>
+
+            {% else %}
+
+            <p>まだ学習記録がありません。</p>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

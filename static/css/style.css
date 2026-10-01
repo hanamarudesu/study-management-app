@@ -226,3 +226,24 @@ button:hover {
     padding: 15px 40px;
     font-weight: bold;
 }
+
+/* 学習履歴 */
+.history-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.history-card h3 {
+    margin-top: 0;
+}
+
+.history-card p {
+    margin: 8px 0;
+}
+
+.record-date {
+    color: #777777;
+    font-size: 14px;
+}
